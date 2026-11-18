@@ -77,20 +77,26 @@ function App() {
     setBurstKey(prev => prev + 1);
   };
 
-  // WhatsApp sharing
+  // WhatsApp sharing - Updated
   const shareInvitation = () => {
+
+    const websiteUrl = window.location.origin;
+
     const message =
       "🙏 Om Namah Shivaya 🙏\n\n" +
-      "You are cordially invited to the first hair-cutting ceremony of our little princess Dhathri Bugga.\n\n" +
-      "📅 Date: 03 December 2026\n" +
+      "You are cordially invited to the first hair-cutting ceremony of our little princess Dhathri Bugga. ❤️\n\n" +
+      "📅 Date: 03 December 2026\n\n" +
       "📍 Venue: Sri Mahanandiswara Swamy Temple, Mahanandi.\n\n" +
       "Please join us and bless our little one. ❤️\n\n" +
-      window.location.href;
+      "View the complete invitation here:\n" +
+      websiteUrl +
+      "\n\n" +
+      "🙏 We warmly welcome you and your family!";
 
-    window.open(
-      "https://wa.me/?text=" + encodeURIComponent(message),
-      "_blank"
-    );
+    const whatsappURL =
+      "https://wa.me/?text=" + encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank", "noopener,noreferrer");
   };
 
   const flowers = Array.from({ length: 22 });
