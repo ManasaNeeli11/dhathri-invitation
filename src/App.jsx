@@ -77,26 +77,27 @@ function App() {
     setBurstKey(prev => prev + 1);
   };
 
-  // WhatsApp sharing - Updated
+  // WhatsApp sharing
   const shareInvitation = () => {
 
-    const websiteUrl = window.location.origin;
+    // Your deployed Vercel website URL
+    const websiteUrl = "https://dhathri-invitation.vercel.app";
 
     const message =
-      "🙏 Om Namah Shivaya 🙏\n\n" +
-      "You are cordially invited to the first hair-cutting ceremony of our little princess Dhathri Bugga. ❤️\n\n" +
-      "📅 Date: 03 December 2026\n\n" +
-      "📍 Venue: Sri Mahanandiswara Swamy Temple, Mahanandi.\n\n" +
-      "Please join us and bless our little one. ❤️\n\n" +
+      "Om Namah Shivaya\n\n" +
+      "You are cordially invited to the first hair-cutting ceremony of our little princess Dhathri Bugga.\n\n" +
+      "Date: 03 December 2026\n\n" +
+      "Venue: Sri Mahanandiswara Swamy Temple, Mahanandi.\n\n" +
+      "Please join us and bless our little one.\n\n" +
       "View the complete invitation here:\n" +
       websiteUrl +
       "\n\n" +
-      "🙏 We warmly welcome you and your family!";
+      "We warmly welcome you and your family!";
 
     const whatsappURL =
       "https://wa.me/?text=" + encodeURIComponent(message);
 
-    window.open(whatsappURL, "_blank", "noopener,noreferrer");
+    window.open(whatsappURL, "_blank");
   };
 
   const flowers = Array.from({ length: 22 });
